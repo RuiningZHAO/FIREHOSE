@@ -39,7 +39,7 @@ FIREHOSE requires installation of the xidl software suite as well as aging SDSS 
 ## Note
 1. This repo is forked from [rasimcoe/FIREHOSE](https://github.com/rasimcoe/FIREHOSE.git).
 2. Only [README](README.md) is modified.
-3. The versions of `idlutils`, `idlspec2d` and `xidl` may not be the latest but they support `FIREHOSE` well on Ubuntu 22.04.
+3. The versions of `idlutils`, `idlspec2d`, and `xidl` may not be the latest but they support `FIREHOSE` well on Ubuntu 22.04.
 4. Consult the following webpages for more help on installation:
     - https://wikis.mit.edu/confluence/display/FIRE/FIREHOSE+installation+instructions
     - http://web.mit.edu/~burles/www/MIKE/mike_install.html (also contains download links of `idlutils`, `idlspec2d`, and `xidl`)
