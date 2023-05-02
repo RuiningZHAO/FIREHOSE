@@ -10,4 +10,15 @@ FIREHOSE has been tested on a wide variety of observations and object types with
 
 FIREHOSE requires installation of the xidl software suite as well as aging SDSS IDL utilities.  The website linked above provides instructions on how to obtain and compile these tools, though some are not well supported, especially on OSX in Catalina or higher.
 
-
+## Installation
+### Download
+1. idlutils (v5_5_36)
+```svn co https://svn.sdss.org/public/repo/sdss/idlutils/trunk/ idlutils```
+2. idlspec2d (v5_13_2)
+```svn co https://svn.sdss.org/public/repo/eboss/idlspec2d/trunk idlspec2d```
+3. xidl (version unknown)
+```git clone https://github.com/RuiningZHAO/xidl.git```
+4. FireHose (version unknown)
+```git clone https://github.com/RuiningZHAO/FIREHOSE.git```
+or
+```git clone https://github.com/rasimcoe/FIREHOSE.git```
