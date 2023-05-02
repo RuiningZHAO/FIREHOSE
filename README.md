@@ -32,7 +32,7 @@ FIREHOSE requires installation of the xidl software suite as well as aging SDSS 
     export FIRE_DIR=$IDL_LOCAL/FIREHOSE
     export IDL_PATH=+$FIRE_DIR/:$IDL_PATH
     ```
-4. Compile `idlutils`, `idlspec2d`, `xidl`. Basically, only two commands (`$IDLUTILS_DIR/bin/evilmake clean` and `$IDLUTILS_DIR/bin/evilmake all`) are needed (see [here](https://www.ucolick.org/~xavier/IDL/xidl_install.html) for details).
+4. Compile `idlutils`, `idlspec2d`, and `xidl`. Basically, only two commands (`$IDLUTILS_DIR/bin/evilmake clean` and `$IDLUTILS_DIR/bin/evilmake all`) are needed (see [here](https://www.ucolick.org/~xavier/IDL/xidl_install.html) for details).
 5. Type `firehose_ld` at the IDL command prompt. This should bring up a GUI for data reduction.
 6. Done!
 
