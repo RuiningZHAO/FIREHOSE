@@ -11,14 +11,37 @@ FIREHOSE has been tested on a wide variety of observations and object types with
 FIREHOSE requires installation of the xidl software suite as well as aging SDSS IDL utilities.  The website linked above provides instructions on how to obtain and compile these tools, though some are not well supported, especially on OSX in Catalina or higher.
 
 ## Installation
-### Download
-1. idlutils (v5_5_36)
-```svn co https://svn.sdss.org/public/repo/sdss/idlutils/trunk/ idlutils```
-2. idlspec2d (v5_13_2)
-```svn co https://svn.sdss.org/public/repo/eboss/idlspec2d/trunk idlspec2d```
-3. xidl (version unknown)
-```git clone https://github.com/RuiningZHAO/xidl.git```
-4. FireHose (version unknown)
-```git clone https://github.com/RuiningZHAO/FIREHOSE.git```
-or
-```git clone https://github.com/rasimcoe/FIREHOSE.git```
+1. Go to the directory where IDL packages are installed (hereafter, `$IDL_LOCAL`).
+2. Download `idlutils`, `idlspec2d`, `xidl` and `FIREHOSE`:
+    - `svn co https://svn.sdss.org/public/repo/sdss/idlutils/trunk/ idlutils` (v5_5_36)
+    - `svn co https://svn.sdss.org/public/repo/eboss/idlspec2d/trunk idlspec2d` (v5_13_2)
+    - `git clone https://github.com/RuiningZHAO/xidl.git` (version unknown)
+    - `git clone https://github.com/RuiningZHAO/FIREHOSE.git` or `git clone https://github.com/rasimcoe/FIREHOSE.git` (version unknown)
+3. Include the following environment variables in bash profile:
+    ```
+    # idlutils
+    export IDLUTILS_DIR=$IDL_LOCAL/idlutils
+    export IDL_PATH=+$IDLUTILS_DIR/goddard/pro:+$IDLUTILS_DIR/pro:$IDL_PATH
+    # idlspec2d
+    export IDLSPEC2D_DIR=$IDL_LOCAL/idlspec2d
+    export IDL_PATH=+$IDLSPEC2D_DIR/:$IDL_PATH
+    # xidl
+    export XIDL_DIR=$IDL_LOCAL/xidl
+    export IDL_PATH=+$XIDL_DIR/:$IDL_PATH
+    # firehose
+    export FIRE_DIR=$IDL_LOCAL/FIREHOSE
+    export IDL_PATH=+$FIRE_DIR/:$IDL_PATH
+    ```
+4. Compile `idlutils`, `idlspec2d`, `xidl`. Basically, only two commands (`$IDLUTILS_DIR/bin/evilmake clean` and `$IDLUTILS_DIR/bin/evilmake all`) are needed (see [here](https://www.ucolick.org/~xavier/IDL/xidl_install.html) for details).
+5. Type `firehose_ld` at the IDL command prompt. This should bring up a GUI for data reduction.
+6. Done!
+
+## Note
+1. This repo is forked from [rasimcoe/FIREHOSE](https://github.com/rasimcoe/FIREHOSE.git).
+2. Only [README](README.md) is modified.
+3. The versions of `idlutils`, `idlspec2d` and `xidl` may not be the latest but they support `FIREHOSE` well on Ubuntu 22.04.
+4. Consult the following webpages for more help on installation:
+    - https://wikis.mit.edu/confluence/display/FIRE/FIREHOSE+installation+instructions
+    - https://www.ucolick.org/~xavier/IDL/xidl_install.html
+5. Consult the following webpage for the usage of `FIREHOSE`:
+    - https://wikis.mit.edu/confluence/display/FIRE/FIRE+Data+Reduction
